@@ -51,7 +51,7 @@ for (i in questionario2)
   xy = t(xy[order(xy[,2],decreasing=T), ])
   
   # Em alguns gráficos a legenda ficou sobreposta ao gráfico
-  if(num==4) posicao_legenda = list(x="topleft")
+  if(num==8) posicao_legenda = list(x="topleft")
   else posicao_legenda = list(x="topright")
   
   # Cria os pdf das figuras
