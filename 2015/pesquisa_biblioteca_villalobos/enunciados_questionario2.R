@@ -88,7 +88,7 @@ o11 = c('de 8 a 15 anos',
 
 
 
-questionario1 = list(list(1,p1,o1),
+questionario2 = list(list(1,p1,o1),
                      list(2,p2,o2),
                      list(3,p3,o3),
                      list(4,p4,o4),
@@ -96,4 +96,6 @@ questionario1 = list(list(1,p1,o1),
                      list(6,p6,o6),
                      list(7,p7,o7),
                      list(8,p8,o8),
-                     list(9,p9,o9))
+                     list(9,p9,o9),
+                     list(10,p10,o10),
+                     list(11,p11,o11))
