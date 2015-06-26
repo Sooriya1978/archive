@@ -85,5 +85,11 @@ for (i in questionario1)
 
     # Coloca os valores em cima das colunas
     text(bp, xy, labels = format(xy, 4), pos = 1, cex = .75)
-  dev.off()
+  dev.off
+  
+  # Salvar .csv com a tabela que gerou o histograma
+  nomecsv = paste('output/questionario1','pergunta',num,'.csv',sep="")
+  tabela = cbind(pergunta=rownames(t(xy)),t(xy))
+  colnames(tabela) = c(pergunta,rownames(xy))
+  write.csv(tabela,file=nomecsv,row.names=F)
 }
