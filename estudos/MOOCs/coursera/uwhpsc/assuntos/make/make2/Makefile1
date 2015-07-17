@@ -1,0 +1,15 @@
+#This is my first makefile
+
+output.txt: main.out
+	./main.out > output.txt
+#Link command:
+main.out: sub1.f90 sub2.f90 main.f90
+	gfortran sub1.f90 sub2.f90 main.f90 -o main.out
+
+%.o: %.f90
+	gfortran -c $c
+#Explicit what makefile to use
+#make mytarget.example -f Makefile2
+#make main.out -f Makefile2
+#make -f Makefile2
+

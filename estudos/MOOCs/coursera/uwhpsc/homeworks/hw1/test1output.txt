@@ -1,0 +1,6 @@
+Code run by **Thiago**
+Environment variable UWHPSC is /home/thiago/Dropbox/git/thirds_for_studies/uwhpsc/
+Environment variable MYHPSC is /home/thiago/Dropbox/git/github/xcourses/coursera_uwhpsc/
+Imported numpy ok
+Imported matplotlib ok
+Imported pylab ok

@@ -1,0 +1,63 @@
+\section{Week 1}
+\begin{itemize}
+\item The memory is divided in bytes and 1 byte is equal to 8 bits. To store integer we use a unit of 4 bytes if processor is 32bits or 8 bytes if it is 64bits. 
+\item When python shows the letter L in the end of a integer, it is indicating that this number needs more than one memory's unit (4 or 8 bytes) to be stored and you have to lead with this.
+\item float number,$0.23 * 10^3$, 0.23 is the mantissa and 3 is the expoent. 
+\end{itemize}
+
+\subsection{Newton's Method}
+To find a solution for $\sqrt{A}$, we look for a function that has $\sqrt{A}$ as root, for example, $f(x)=x^2-A$. The roots are: $-\sqrt{A}$ and $+\sqrt{A}$. Using the Newton's Method:
+
+\begin{equation}
+  x_{n+1} = x_n + \frac{f(x_n)}{f\prime(x_n)} 
+\end{equation}
+
+Applying in our function: 
+\begin{equation}
+  x_{n+1} = \frac{x_n}{2} + \frac{A}{2x_n}
+\end{equation}
+
+\subsection{python}
+\begin{itemize}
+  \item apt-get install ipython-notebook python-scipy python-numpy python-matplotlib
+  \item ipython notebook --pylab inline
+\end{itemize}
+
+In python we can use lists and tuples. lists are $[1,'abc',3.4,[4,5]]$ and tuple $(1,'abc',3.4)$. 
+Both accept differents kinds of objects, but list is mutable and tuple is immutable. Mutable objects point to the same location at memory. We can not assign a new value to a position of tuple, like $mytuple[2] = 'new'$
+We can lead list as mutable objects, to assign their values: 
+new-list = list(myoldlist). To verify position on memory on python: id(mylist).
+\subsection{Peformance}
+\begin{itemize}
+  \item Latency: amount of time to complete a given work
+  \item Throughput: amount of work to be completed per unit of time
+\end{itemize}
+
+The idea is hide latency and improve throughput
+
+\subsection{Parallel Computing}
+OpemMP: shared memory \\
+MPI: distributed memory 
+
+Amdahl\' Law: only part of computation can be parallelized.
+
+Example: Suppose 5\% of the computation is inherently sequential and the 95\% is parallelized,
+how much faster could the computation run on many processors? 
+20 vezes mais rápido (1/20=5\%). 
+
+Law: $1/S$ of the computation is inherently sequential and the $(1-1/S)$ is parallelized, 
+how much faster could the computation run on many processors? 
+In the maximo S, no matter how many processors.
+
+\begin{equation}
+T_p = (1/S)T_S + (1-1/S)T_S/P 
+\end{equation}
+P: number of processors. 
+Tp: time to run the program. 
+$T_S$: time required in a sequential machine.
+
+Fluxo OpenMP:
+Existe um thread master, a qual podemos criar threads forks, que depois se juntam novamente
+na thread master. Os forks podem ser private o shared, ou seja, pode trabalhar com os dados
+de forma privada ou não. As threads forks não podem depender uma da outra, a não ser se 
+sincronizamos-as.

@@ -1,0 +1,21 @@
+#Creating the macro
+SOURCES = $(wildcard *.f90)
+OBJECTS = $(subst .f90,.o,$(SOURCES))
+
+.PLONY: test
+
+test:
+	@echo "Source are: " $(SOURCES)
+	@echo "Objects are: " $(OBJECTS)
+
+output.txt: main.out
+	./main.out > output.txt
+
+main.out: $(OBJECTS)
+	gfortran $(OBJECTS) -o main.out
+
+$(OBJECTS): $(SOURCES)
+	gfortran -c $(SOURCES)
+
+#make output.txt -f Makefile6
+

@@ -1,0 +1,10 @@
+{
+	"pets": 
+	[
+	{"name":"Jeffrey", "specie":"Giraffe"},
+	{"name":"fulano", "specie":"Dog"},
+	{"name":"catrina","specie":"vaca"}
+	]
+}
+
+

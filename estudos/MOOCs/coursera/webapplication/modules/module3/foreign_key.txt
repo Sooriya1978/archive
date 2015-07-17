@@ -1,0 +1,43 @@
+Type of relationship | no foreign key | foreign key  
+one-to-one           | has_one        | belongs_to
+many-to-one          | has_many       | belongs_to
+many-to-many         | has_and_belongs_to_many | *
+
+In /blog/app/models/post.rb
+add: has_many :comments, dependent: :destroy 
+
+In /blog/app/models/comment.rb
+add: belongs_to :post 
+
+$ rails console
+> p = Post.all # the return is a array
+> p[0].comments.size
+> Comments.all
+> p[1].destroy
+$ rake routes
+
+fazer os comentários serem herdados dos posts:
+/blog/config/routes.rb
+ resource :post do
+   resouces :comments
+ end
+$ rake routes
+URL: posts/1/comments show comments of post 1.
+
+validation (are defined in Model (MVC)):
+We can execute methods in a object, we call this methods of callback (hooks).
+
+Example:
+In class /blog/app/models/example.rb
+  validates_presence_of :name
+  validates_numerically_of :age, :only_integer => true
+  validates_confirmation_of :email
+  validates_length_of: :password, :in => 8..20
+
+In class /blog/app/models/post.rb
+  validates_presence_of :title
+  validates_presence_of :body
+
+In class /blog/app/models/commnets.rb
+  validates_presence_of :post_id
+  validates_presence_of :body

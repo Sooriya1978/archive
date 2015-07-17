@@ -1,0 +1,2 @@
+ the value of pi is:    3.1415926535897931     
+ The area calculed for r = 2 is:    12.566370614359172     

@@ -1,0 +1,30 @@
+examples: 
+
+1) 2+5 if true
+
+2) until expression
+     code
+   end
+
+3) myarray = [1,22.6,"tiago"]
+   myarray[0]
+   myarray.methods
+   myarray[1..2]
+   myarray[-1]
+
+4) myhashe = {:home => 'usp', :mobile => 'tim'}
+   myhashe[:home]
+   myhashe.key('usp')
+
+5) def three_times
+     yield
+     yield
+     yield
+   end
+  > three_time {puts "Hello Jack"}
+
+6) iterators example: 
+> b = ['thiago',27,89.9]
+> a.each {|elements | puts element}
+ 
+

@@ -1,0 +1,21 @@
+In MVC model, the active record design patterns take place in M (Model): 
+It link business logic and data access tiers: crud operation.
+
+ORM: Object-Relational Mapping
+-classes are mapped to table 
+-objects are mapped to records (rows)
+-attributes are mapped to values (columns)
+
+Ruby command line:
+$ irb 
+
+Rails console
+$ rails console
+> p = Post.new(:title=> "My first POst", :body => "It is just test!" )
+> p.save
+> Post.all
+> Post.first
+
+In a Rails application, the best place to implement data validations (prior to persisting an ActiveRecord object to the database) are in the Model.
+
+

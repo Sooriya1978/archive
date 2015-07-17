@@ -1,0 +1,44 @@
+
+1)we will use ajax in: comments displayed and form to create a new comment (in a post page).
+  insert "remote: true" in:
+  blog/app/views/posts$ vim show.html.erb 
+  like this (line 25): <%= form_for([@post,Comment.new], remote: true) do |f| %>
+
+2)create partial template: app/views/comments/_comment.html.erb
+2.1)Copy the following part from app/views/posts/show.html.erb e put in _comment.html.erb;
+  <%= div_for comment do %>
+    <p>
+      <strong>Posted <%= time_ago_in_words(comment.created_at) %></strong> <br />
+      <%= h(comment.body) %>
+    </p>
+  <% end %>
+
+2.2)change the part in app/views/posts/show.html.erb:
+
+<% @post.comments.each do |comment| %>
+  <%= div_for comment do %>
+    <p>
+      <strong>Posted <%= time_ago_in_words(comment.created_at) %></strong> <br />
+      <%= h(comment.body) %>
+    </p>
+  <% end %>
+<% end %>
+
+for this single line:
+<%= render :partial => @post.comments.reverse %>
+
+3)modify controller to respond to ajax request:
+  In blog/app/controllers/comments_controller.rb
+add a new line in if statement with "format.js" (line 35):  
+   if @comment.save
+       # format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @post, notice: 'Comment was successfully created.' }
+        format.json { render :show, status: :created, location: @comment }
+        fomart.js
+This new line added will automatically call create.js.erb file.
+
+4)create app/views/comments/create.js.erb:
+  var new_comment = $("<%= escape_javascript(render(:partial => @comment))%>").hide();
+  $("#comments").prepend(new_comment);
+  $("#comment_<%= @comment.id %>").fadeIn('slow');
+  $("#new_comment")[0].reset();

@@ -1,0 +1,17 @@
+#Creating the macro
+OBJECTS = main.o sub1.o sub2.o
+
+output.txt: main.out
+	./main.out > output.txt
+
+main.out: $(OBJECTS)
+	gfortran $(OBJECTS) -o main.out
+
+%.o: %.f90
+	gfortran -c $<
+
+#Explicit what makefile to use
+#make mytarget.example -f Makefile2
+#make main.out -f Makefile2
+#make -f Makefile2
+

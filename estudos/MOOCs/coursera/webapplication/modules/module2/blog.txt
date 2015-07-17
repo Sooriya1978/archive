@@ -1,0 +1,16 @@
+#Scaffold é a infrastrutura: model, view and controller
+rails new myblog
+cd myblog
+rails generate scaffold post title:string body:text
+rails generate scaffold comment post_id:integer body:text
+
+#Cria tabelas no banco
+rake db:migrate
+
+#Criar path na URL
+rake routes
+
+#Inicia server
+rails server #desenvolvimento
+rails server -e production #(para produção)
+http://localhost:3000/posts

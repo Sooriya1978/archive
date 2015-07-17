@@ -1,0 +1,1 @@
+NO php.ini track_errors cria a variável global: $php_errormsg

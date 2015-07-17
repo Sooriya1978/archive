@@ -1,0 +1,3 @@
+- Write a function that reads a directory full of files
+- reports the number of completely observed cases in each data file. 
+- return a data frame where the first column is the name of the file and the second column is the number of complete cases.

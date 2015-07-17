@@ -1,0 +1,32 @@
+1)Configure Post class to have many comments and destroy all comments associated with it when a post is destroyed:
+  -In class insides /blog/app/models/post.rb:
+    has_many :comments, dependent: :destroy
+
+2)configure Comment dependency:
+  -In class /blog/app/models/comment.rb:
+    belongs_to :post
+
+3)test in console:
+  $ rails console
+  > c = Comment.new()
+  > p = Post.new()
+  > p.comments << c
+  > puts p.comments
+
+4)nested resource:
+  /blog/config/routes.rb
+   resource :post do
+     resouces :comments
+   end
+  $ rake routes
+
+5)validations:
+  In class /blog/app/models/post.rb
+    validates_presence_of :title
+    validates_presence_of :body
+
+  In class /blog/app/models/commnets.rb
+    validates_presence_of :post_id
+    validates_presence_of :body
+ 
+

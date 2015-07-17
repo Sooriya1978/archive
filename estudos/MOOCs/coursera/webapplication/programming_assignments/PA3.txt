@@ -1,0 +1,47 @@
+1)list comments in post page and add form to create new comments:
+
+In file app/views/posts/show.html.erb
+
+<h2>Comments</h2>
+<div id="comments">
+  <% @post.comments.each do |comment| %>
+    <%= div_for comment do %>
+    <p> 
+      <strong>Posted <%= time_ago_in_words(comment.created_at) %></strong> <br />
+      <%= h(comment.body) %>
+    </p>
+  <% end %> 
+<% end %> 
+<div>
+
+<%= form_for([@post,Comment.new]) do |f| %>
+  <p><%= f.label :body, "New Comment" %><br />
+     <%= f.text_area :body %>
+  </p>
+  <p><%= f.submit "Add Comment" %></p>
+<% end %>
+
+In app/controllers/comments_controller.rb
+
+In the top of create method:
+  delete first line and add:
+  @post = Post.find(params[:post_id])
+  @comment = @post.comments.create(comment_params)
+
+  change the line:
+    format.html { redirect_to @post, notice: ....
+
+In config/routers.rb
+-Remove resource commets from routers.
+
+
+2) Autentication:
+  In app/controllers/posts_controller.rb
+  add: before_action :authenticate, except: [:index, :show]
+  under private section of class:
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "admin"
+    end
+  end
+

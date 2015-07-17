@@ -1,0 +1,32 @@
+Ler arquivo:> dados<-read.table(file="hw1_data.csv",sep=",",header=T)
+1) names(dados)
+2) dados[1:2,]
+3) length(dados[,1])
+4) dados[152:153,]
+5) dados[47,]
+6) sum(is.na(dados[1]))
+7) sum(dados[!is.na(dados[1]),][1])/sum(!is.na(dados[1]))
+ou
+> a<-dados[!is.na(dados[1]),][1]
+> colMeans(a[1])
+
+8) sum(dados[!is.na(dados[1]) & dados[1]>31 & dados[4]>90,][2])/sum(!is.na(dados[!is.na(dados[1]) & dados[1]>31 & dados[4]>90,][2]))
+ou 
+coluna<-dados[!is.na(dados[1]) & dados[1]>31 & dados[4]>90,][2]
+colMeans(coluna[1])
+
+9)sapply(dados,class)
+
+10)final <- dados[dados[5] ==6,] ou final<-subset(dados, dados[5]==6)
+colMeans(final[4])
+
+subset(hsb2.small, write > 50 & read > 60)
+
+
+
+
+
+
+
+
+

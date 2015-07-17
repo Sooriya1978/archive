@@ -1,0 +1,17 @@
+\l : lista bancos
+\c banco : conecta e banco
+\dt : mostra tabelas
+\dT : tipos de dados
+\du: usuários cadastrados
+\d nome_tabela: describe tabela
+
+create user thiago with password '123';
+grant select,insert,update,delete on agenda to thiago;
+ou: grant all on agenda to thiago;
+\z : mostra privilégios
+revoke delete,update on agenda from thiago;
+
+#backup de todos bancos
+$ pg_dumpall -U postgres > dbs.sql
+#restaurar:
+$ psql -U postgres template1 < dbs.sql

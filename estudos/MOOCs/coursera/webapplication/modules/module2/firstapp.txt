@@ -1,0 +1,8 @@
+#Criando um novo app no rails:
+ $ rails new sitedothiago
+ $ cd sitedothiago
+ $ bundle check #verifica se todos gem (bibliotecas do Ruby) estão presentes, em caso negativo: $ bundle install
+ $ rails server # start webserver
+ $ rails server -h # para passar outro parametros
+ localhost:3000 # ou 0.0.0.0:3000
+

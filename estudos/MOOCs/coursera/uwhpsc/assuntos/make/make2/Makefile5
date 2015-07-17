@@ -1,0 +1,31 @@
+#Creating the macro
+OBJECTS = main.o sub1.o sub2.o # It is a list 
+
+FC = gfortran # We can try Ifortran from Intel
+FFLAGS = -g 
+LFLAGS = 
+# A plony targert is a target that no correspond to a filename and do not have dependecies
+.PLONY: clean help
+
+output.txt: main.out
+	./main.out > output.txt
+
+main.out: $(OBJECTS)
+	$(FC) $(LFLAGS) $(OBJECTS) -o main.out
+
+%.o: %.f90
+	$(FC) $(FFLAGS) -c $<
+
+clean:
+	@rm -f $(OBJECTS) main.out
+	# A silent remove, ie, do not display code
+
+help:
+	@echo "Valid targets: "
+	@echo "main.out "
+	@echo "main.o"
+	@echo "sub1.o"
+	@echo "sub2.o"
+	@echo "output.txt"
+	@echo "clean: remove .o and .out files"
+#make help -f Makefile5

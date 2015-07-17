@@ -1,0 +1,6 @@
+MVC: models view controllers are in folder app
+web: the content 
+internet: infrastructure
+
+arquitetura: n-tier 
+testes: TDD e BDD

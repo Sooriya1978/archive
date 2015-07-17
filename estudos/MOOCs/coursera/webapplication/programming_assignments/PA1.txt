@@ -1,0 +1,36 @@
+steps:
+
+1)install Rails
+2)create a new instance: 
+  $ rails new blog
+3)create scaffold for post and comment:
+ $ rails generate scaffold post title:string body:text
+ $ rails generate scaffold comment post_id:integer body:text
+ 
+4)create tables on database:
+ $ rake db:migrate
+
+5)create paths:
+ $ rake routes
+
+6)start server (only for tests):
+ $ rails server
+ http://localhost:3000/posts or comments
+
+7)Create a blog repository on bitbucket
+
+8)install and configure git:
+  $ sudo apt-get install git
+  $ git config --global user.name 'thigove'
+  $ git config --global user.email 'myemail@gmail.com'
+  $ git config --global color.ui auto
+  $ git config --global color.interactive auto
+
+9)init blog repository:
+  $ git init
+  $ git remote add origin https://thigove@bitbucket.org/thigove/blog.git 
+
+10)commit and push master branch to bitbucket:
+  $ git add .
+  $ git commit -m 'first commit'
+  $ git push -u origin master
