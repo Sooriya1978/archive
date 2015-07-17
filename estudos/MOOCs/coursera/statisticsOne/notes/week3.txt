@@ -1,0 +1,62 @@
+Semana 3
+
+Há vários tipos de correlação e várias formas de calcular os coeficientes. O coeficiente mais usado é o Pearson. Mas o tipo de correlação depende das variáves usadas na correlação (nominal, ordinal, interval e ratio).
+ 
+Regressão: fazer previsões, pois correlação não implica em causalidade. Atenuação da correlação devido a seleção restrita a um grupo com caracteristicas específicas (o que nos impede de calcular a covariância). 
+
+Tipos de correlação: 
+Contínuo X contínuo: Pearson (coeficiente de correlação)
+Nominal(diconomial) X continuo: bi-serial
+Nominal(diconomial) X Nominal(diconomial): Phi coeficiente
+Ordinal(rank) X Ordinal(rank) : spearman
+
+r = o grau que x e y variam juntos, em relação ao grau que eles variam independentemete  
+
+Fórmulas:
+r = covariância (x,y)/variância(x,y)
+variância = sd^2 = mean square ou SS sum of squared/N = soma( (x - media)^2)
+
+SP = sum cross products = sum ( (X-Mx)(Y-My)) 
+covariancia= SP/N : A correlação é a covariância normalizada (isto é varia de -1 a 1), assim como o desvio padrão é a variância normalizada
+variância = SS/N
+r = sum ( (X-Mx)(Y-My))  / raiz( sum((X-Mx)^2) sum((Y-My)^2) ) = SP/SS
+
+Se os dados estiverem normalizados (é fácil mostrar que é a mesma acima): 
+r  = soma(Zx Zy)/N
+
+Em estatística descritiva, dividir por N, e em inferência estatítistica por N-1.
+
+Resíduo (prediction error): distância na vertical entre o ponto e a linha de regressão.
+
+homoscedascidade: Os resíduos não podem estar relacionados a X, ou seja o resíduo não pode ser função de X (se isso ocorrer há erro sistemático).
+
+Critérios para calcular correlação: x e y com distribuição Normal, x e y variam linearmente e existe homoscedascidade.
+
+sampling: randon and representative
+sampling error: diferença entre a população e a amostragem. Como não conhecemos os parâmetros da população, temos que estimar o sampling error. Depende do tamanho da amostra, quanto maior, menor o erro sampling error. O sampling error também depende da variância da população (aumenta junto).
+Standard Error= SD / raiz(N)
+
+Medida (construct): 
+confiança: Quão reliable nossa medidas são? 
+reliable scale: Se fizermos uma medida e repetirmo novamente deve ser estável. Mas como fazer isso em situações que é dificil repetir o experimento (social science)? usamos Classical test theory!
+Classical test theory (true score theory): Um medida bruta (X) é influenciada por bias, erro. 
+X = valor verdadeiro + bias + chance erro. Nunca sabemos o valor verdadeiro. 
+
+Métodos de estimar a reability:
+test/re-test: medir duas vezes com mesmo instrumento, as medidas devem ser correlacionadas (isso é, a medida da reability). Se não há correlação é unreliable scale. Caso exista bias, há shift dos dados, não detectamos com esse método, (com o histograma e média conseguimos ver bias).
+
+parallel test: duas medidas com instrumento diferentes. A correlação novamente indica realibity. Comparando histograma e média vemos bias. 
+
+inter-item estimate (mais usado em social science): Suponha um questinário com 20 questões que medem um comportamento X. Separamos randomicamente as 20 questoes e dois grupos A e B com 10 questões cada um. A e B devem ser correlacionados.
+  
+Validade:
+contruct: Um objeto que não é diretamente observável, ex. Inteligência. Uma vez definido o contruct, como medí-lo? operacionalização: o processo de tornar o construct observável e quantificável (fazer uma prova por exemplo). 
+Uma vez operacionalizado, como medir a validade do construct (exemplo, o quão uma  prova está medindo inteligência):
+
+content/face validity: olha para prova e verifique: ela condiz com seu público? é adequada? exemplo de violação: dar um prova em alemão para falantes de português (violação do content validity).
+
+convergent validity: o resultado de uma prova deve estar correlacionado com resultados estabelecidos da mesma prova. Ex. A partir de um teste já aceito, crio outro e vejo se estão correlacionados, se sim, isso valida meu test.
+ 
+Divergent validity: mostrar que o teste não correlaciona com teste "padrão", já que esse novo pode quantificar outras capacidade além da considerada. 
+
+Nomological validity: consistência com estudos já existentes. Ex. pessoas com probelmas em alguma região do cerebro deve te uma nota menor no teste.

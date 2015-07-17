@@ -1,0 +1,322 @@
+
+
+
+SEMANA 5
+Sampling distribution: ex. distribuição da correlaçoes de amostragem. Normalmente fazemos uma amostragem. Mas como fazemos para ter multipla amostragem (o que é inviavel), por exemplos a média de várias amostragens (com o mesmo sample size N) seriam diferentes por causa do sampling error - mas teriamos a sampling distribution? Sampling distribution é hipotetica, nós estimamos. 
+Sampling distributions are fundamental to inferential statistics because they: Allow for probabilistic predictions about outcomes
+A distribution of sample means is a specific type of sampling distribution. If sample size = 1 then the distribution of sample means for variable X will be: Exactly the same as the distribution of X
+
+Central limit value, 3 principios:
+A média da distribuição amostral é a média da população
+O desvio padrão da dsitribuição amostral é a raiz quadrada da variancia da dsistribuiçã amostral sigma^2/N
+A distribuição amostral é aproximadamente normal se N > 30 ou a distribuição da população é  normal 
+Passo: Assumir que a hipotese nula é verdadeira (B=0), calcular B (regression coeficient), SE e t=B/SE. Mas como encontrar o p-value a partir de t-value?
+regressão multipla: Assumir que a hipotese nula é verdadeira (B=0), calcula B e verifica que ele é grande (ou muito pequeno), portanto rejeita a hipotese nula. Mas o que é um B grande ou pequeno? O p-value vem da distribuição do t-value. Depois que eu calculo meu t-value e vejo onde ele está na distribuição do t (que depende do sample size). o p-valeu é a probabilidade de obter aquele t-value. o p é probabilidade de obtermos aquele t-value dada a afirmação que que t é nulo. Se p-value pequeno rejeitamos a hipotese de t =0. p-valeu é a area da curva e depende da sample size e do t-value. Alto p-value retain de null hipotese.
+sempling errro é determinado pelo tamanho da amostra. O sample error é o desvio padrão da sampling distribution. conclusão: N grande gera SE pequeno que gera t grande que gera p-value pequeno que nos da um resultado estatisticamente significante.
+Mesmo que a populção não seja normal a sampling distribution pode ser.
+
+In contrast to the z distribution, there are multiple t distributions. The correct distribution to use is determined by: Degrees of freedom
+Standard error is influenced by Sample size & Variance in the population
+
+Confidence interval for sample means: qualquer medida é um ponto estimado da distribuição. Os estatisticos recomendam sempre reportar um intervalo de confiança. Grau de confiança: A probabilidade que esse intervalo capturar o parametro verdadeiro é 95%. Sampling erro implie que se repetirmos os estudo o parametro estimado sera diferente. O intervalo de confiança é influenciado pela: sample size, variancia na população (e portanto o Sample erro sd/N)
+sampling erro: quanto do erro da amostragem eu esperaria dedivo ao acaso. 
+IC = M +/- t SE
+A single sample statistic can be thought of as: A point estimate
+As sample size increases, the width of confidence intervals typically: Decreases 
+
+SEMANA 6
+Regressão multipla: multiplos predictor;
+ŷ = b0 + b1bx1 + b2x2 …
+ŷ preditor value dp valor de y
+b’s : coeficiente de regressão não padronizados
+y-ŷ = residuo
+Correlação entre the predict scores and observed scores: R=ryy
+R^2: porcentagem da variancia explicada em Y devido ao modelo. Esse é o jeito de avaliar o modelo. Para saber qual coeficiente mostra o predictor mais forte, temos que olhar os coefieciente padronizados. 
+In multiple regression, what is the difference between the multiple correlation coefficient R and the value R2: R is the correlation between predicted and observed scores whereas R2 is the percentage of variance in Y explained by the regression model.
+In multiple regression, the regression constant is: The predicted value for Y when all Xs are 0
+
+A correlation matrix is a special matrix used in statistics. The correlation matrix is characterized by which of the following? It is a square symmetric matrix
+
+Multiple regression coefficients are estimated simultaneously using matrix algebra. In matrix form, the formula is [B = (X’X) -1X’Y]. Why is matrix inversion required? To isolate B on one side of the equation
+Estimando coeficiente: Minimizar os residuos. SS.residual = soma ((ŷ-y)^2)
+Ŷ = B(X), 
+Ŷ É [N x 1], N é o  número de casos
+B É [k-1], k é número de predictors
+X é [N x k]
+Ŷ é o previsto e Y é o observado. 
+vamos multiplicar os dois lados de Y = B(X) pela transposta de X, X’. e isolar B:  [B = (X’X) -1X’Y]
+- tarefas: calcular B na mão e calcular a matrix de correlação na mão. Olhar slides. 
+
+Multiple regression coefficients are estimated simultaneously using matrix algebra. In matrix form, the formula is [B = (X’X) -1X’Y]. Why was it necessary to transpose X? Because only square matrices can be inverted
+
+
+Suppose you run a regression in R predicting cognitive ability from age. Based on the information below, what can you suggest?
+(Intercept)     50.29667  data$age     -0.19479
+As age increases by 1 unit (in years), cognitive ability decreases by .19 units
+General Linear model: inclue regressão multipla + ANOVA (analise da variancia)
+
+Which of the following are true of an ANOVA (Analysis of Variance)? It is used when the independent variables are categorical and the dependent variable is continuous; It is a form of multiple regression where the predictors are not correlated; It is an analysis used when the relationship between the independent variable and the dependent variable are linear and additive
+
+When should you use t-tests instead of ANOVAs? When there are only two group means. 
+
+What is the purpose of dummy coding? To code the multiple levels of a categorical predictor in a regression analysis
+
+In a multiple regression with effects coding, the regression constant represents: The average predicted score across all groups.
+
+
+PROVA 1
+When distributions are skewed, the most accurate measure of central tendency is: mediana
+
+Given a distribution of scores, the average of the squared deviation scores is equal to: (x1-media)^2+(x2-media)^2+(x3-media)^2/N, ou seja, a variância
+
+Complete the following syllogism: SS (soma dos quadrados) is to SD as SP (soma dos produtos) is to: correlação
+
+Systematic measurement error represents: bias
+
+In a regression analysis, which distribution will have the largest standard deviation: the observed scores on the outcome variable, Y
+
+The difference between an observed score and a predicted score in a regression analysis is known as: resíduo
+
+In a simple regression analysis with outcome variable Y, the standardized regression coefficient for X will always equal: The correlation coefficient
+In a regression analysis, if the residuals are correlated with X then what assumption has most likely been violated? homoscedasticity assumption
+
+In multiple regression what is the difference between R and R^2? R is the correlation between predicted and observed scores whereas R^2 is the percent of the variance in Y that can be explained by the regression model
+
+In the faculty salary example, Ŷ = 46,910 + (1,382)X1 + (502)X2 – (3,484)X3, where X1 = years since graduation, X2 = publications, and X3 = gender (male coded as 0 and female coded as 1). According to this model, the predicted salary for a male faculty member who just graduated (years = 0), with zero publications, is: 46,910
+
+In the faculty salary example the actual difference in average salary between men and women was NOT = $3,484. $3,484 is: The predicted difference between male and female faculty who are average in years since they graduated and have an average number of publications
+
+In multiple regression analysis, the null hypothesis assumes that the unstandardized regression coefficient, B, is zero. The standard error of the regression coefficient depends on: Lembrando da fórmula t = B1/SE, standart error = raiz(ss.residual/N-2). Sample size, Sum of Squared Residuals, and the number of other predictor variables in the regression model 
+
+When conducting a null hypothesis significance test, the p value represents: A probabilidade de obtermos esses dados dado que a hipotese nula é verdadeira 
+
+SEMANA 7
+Moderation: 
+X predictor variable
+Y outcome
+Z moderator (Z melhorara o modelo de regressão - isto é, melhoram a variancia explicada no outcome Y -  se a relação entre X e Y variam com Z)
+Y = B0 + B1X + erro, o B1 será diferente se houver um Z não computado, isso ocorre muito. 
+Se X e Z são continuas: 
+Y = B0 + B1X + B2Z B3(X*Z) +  erro -> se B3 é significante temos um moderetor effect, basta rodar sem o moderator (mas considerando Z como mais um predictor) e com e ver a variancia explica no outcome. 
+Se X categorica e Z continuas, tratar X como dummy codes D (neste caso X tem 3 níveis): 
+Y = [B0 + B1*D1 + B2*D2+ B3*Z] + [B4*(D1*Z) + B5*(D2*Z)]  +  erro -> se B3 é significante temos um moderetor effect. 
+What is the main reason to run a moderation analysis? to demonstrate how a third variable changes the correlation between two variables
+Evidence for a "significant" moderation effect can be detected by: The p-value & t-test for the product term (mod) assim como The p-value & F-test comparing a model with a moderator to a model without the moderator.
+Centering predictors: x-media em todos os predictors. Na equeção de regressão só o B0 muda os slopes continuam os mesmos. Moderation effect: o slopes mudam em função de Z.   
+Se tivermos dois predictors que são redudantes (colineariadade) a regressão falha, pois os slopes representam a variancia unica explicada no outcome por cada predictor. 
+How do you center a variable? take the individual score and subtract the mean
+The main conceptual reason to center predictor variables in multiple regression is: to make the regression constant more meaningful. 
+After centering all predictor variables, which of the following values in the regression model will be different? Regression constant
+If all values in a dataframe were z-scores would it be necessary to center the predictor variables in a multiple regression analysis? no
+
+Mediator: Melhora o entedimento da relação entre o predictor e o outcome. Exemplo: 
+Y = B0 + B1X+ erro, mas suponha que X e Y sejam correlacionados por causa do Mediator M. Assim, Y = B0 + B1M + erro ; e: M = B0 + B1X + erro (X->M->Y) ou
+Y = B0 + B1M + B2X + erro, B2 será significante? Se B2 for menor que antes temos a mediation. Se o p-value de B2 não for significante há full mediation. 
+What is the main reason to run a mediation analysis: To better understand the correlation between two variables. 
+Structural equation modeling, path model:
+retangulo: variáveis observáveis: x,y,m
+Circulos: váriaveis não-observaveis: erro
+triangulo: constante
+arrow: associações
+Sobel test (z-value): testa para ver se o inderect path pelo mediation é siginificante. Null hipoteses, onde o null hipotese é 0.
+The null hypothesis of the Sobel test is: The indirect effect of X on Y with a mediator variable M is zero
+
+SEMANA 8
+student-test: sempre olhar o effect size.
+t-test dependente: as mesmas pessoas medidas duas vezes e ver se a diferença é siginificantemente difente de zero. O observado é a  média das diferenças de cada individuo, ou seja, calcula-los a diferença individo a individuo e depois tiramos a media.  
+t-test independente: comparação entre dois grupos diferentes de amostras (ex: homem X mulher ou condição 1 X condição 2); Tiramos a média do grupo 1 e do grupo 2 e olhamos a diferença entre as médias; 
+
+A distribuição do t depende dos graus de liberdade:
+t-test dependente: N-1
+t-test independente: (N1-1) + (N2-1)
+
+t-test = (observerd - expected)/Standart Error, como estamos falando da diferenca  o expect é zero. 
+Standart Error: quanto da diferença é devido ao acaso
+
+standard error is just how much of a difference we would expect to, due to chance: é o quanto de uma diferença que seria de esperar para, devido ao acaso.
+
+You want to compare preferences for a political candidate. In the 1st study you recruit liberals and conservatives and have them rate their likelihood to vote for the candidate. In the 2nd study you ask a group to rate their likelihood to vote for the candidate before and after the candidate makes a speech. In the 3rd study, you compare your group’s preference for the candidate to the voting population. Which test do you use for each study?
+1st study: independent t-test; 2nd study: dependent t-test; 3rd study: single sample t-test
+
+You want to know how a particular group performs on a well-known test of intelligence. Taking a sample size of 10, you find that your group performs 1.5 units of standard error higher the population mean for the test. What can you conclude?
+Your group is not significantly different from the population
+
+Dependent t-test:
+Para usar essa teoria a distribuição deve ser normal. A diferença é significante ou é devida ao acaso?
+Sequencia da análise: 1) t-value, 2) p-value, 3) cohen’s d (effect size) 4) confidence interval (poins sample means são apenas point estimate). M = mean difference score
+
+t = (observed - expect)/SE. O expect é zero, e o obsevado é a média da diferença entre os dois valores que chamaremos de M. 
+cohen d = M/SD
+CI = M +/- t(SE), onde t depende do level of confidence que vc quer e da distribuição de t
+
+What is the other term for dependent t-test? Se o CI inclue 0 a diferrenca não é significante. Paired t-test
+
+You are interested in the effect of training on a particular test of performance. You take a group of 100 people and find that they have a mean gain in performance of 10 points after training with the standard error of the difference equal to 5. What is the relevant t-statistic? Resp: 2
+
+Independent t-test: 
+A estatistica de teste de siginificancia é chamada estatistica parametrica. 
+2 amostras completamente diferentes
+t = (M1 - M2)/SE
+SE  = (SE1+SE2)/2
+cohen d = (M1-M2)/SD, SD  = (SD1+SD2)/2 , quanto maior o d maior é o efeito
+Neste caso temos que testar a homogeinidade da variancia entre os dois grupos: levene-test-> se significante a homogeinidade da variância é violada. Se essa homogeinidade da variancia for violada, então temos que fazer outro tipo de analise, anova. 
+
+You have completed a study comparing two groups, one with 15 participants, the other with 13. What are the degrees of freedom for an independent t-test comparing these two groups? 26
+
+Which statements are true? Cohen’s d is unbiased by sample size, 
+Cohen’s d provides the magnitude of the difference between groups; Cohen’s d is calculated by subtracting one group mean from the other, and dividing that number by the pooled standard deviation
+
+One-way Anova - Analysis of variance
+Usada quando todos predictors são categorical e o outcome continuo. Usada qaundo há mais que 2 grupos, se houver apenas 2 grupos usar independent t-test.
+Analogias:
+dependent t-test: repeated measures ANOVA (o mesmo grupo medido várias vezes)
+independent t-test: between measures ANOVA (diversos grupos)
+
+one way between measures ANOVA 
+Quando temos muito grupos e estamos fazendo o independent t-test aumentamos o erro do tipo I, melhor usarmos one-way between groups ANOVA. 
+Null Hypoteses: todos grupos são iguais.
+F-test = variancia entre os grupos / variancia dentro dos grupos, assim como o t-test também há distribuições associadas com o F-test, mas os valores negativos não são permitos, causando distribuições skewed right. A distribuição de F varia com a quantidade grupos e a quantidade de individuos. (Fisher)
+A = independent variable
+SA = dentro do grupo
+F = Mean Squared A / Mean Squared SA
+
+Mean Square = Sum of Square/degree of freedom
+
+eta-squared: Porcentagem da variancia explicada no outcome measured pela independent variable = SS A/SStotal
+Só podemos usar esse método deṕois do teste de levene.
+post-doc test permite fazer multiplas comparações sem aumentar a probabilidade o erro do tipo I, existem vários: tukey, buferroni, entretanto só podemos usar se o teste acima ANOVA é siginificante.
+When should you use t-tests instead of ANOVAs? when there are only two group means
+What is the equation of a one-way ANOVA? Y = B0 + B1X1 + e
+
+You find a significant result in a one-way ANOVA comparing four groups of a predictor variable. What can you conclude about how the groups differ?
+answer: there is some difference between the four groups, but you need more information to pinpoint that difference
+
+Which of these post-hoc tests is the most conservative? Bonferroni
+
+SEMANA 9 
+
+Factorial ANOVA
+É a mesma que a one-way between groups ANOVA mais com duas independent variable (A e B; as duas categorical). 
+3 F dist são produzidos A,B e AB.
+Main effect: Efeito de A ignorando b?
+simple effect: efeito em A devido ha um ponto especifico de B
+interection effeito: Efeito de A varia com  b?
+Main effect e interaction effect são independentes. 
+Analogia: factorial anova é uma regressão linear onde os predictors são independentes.
+FA = MS A/ MS S/AB
+FB = MS B/ MS S/AB
+F AxB = MS AxB/ MS S/AB
+
+What is the difference between a one-way and a factorial ANOVA?
+the number of treatments,the number of F-ratios,the number of F-ratios
+
+What should you test for after a significant interaction in factorial ANOVA? simple effects
+
+Assim como no one-way anova qaundo vemos que a significancia rodamos o post-hoc, aqui fazemos o imple effect: simple effect in A due to each level the B (ou o contrario), mas como fazer isso? t-test com var.equal T
+
+Which of the following is NOT an example of an interaction in a 2 X 3 factorial ANOVA?
+the effect of A is significant (and the same magnitude) at each level of B
+the effect of A is significant (but different in magnitude) at each level of B
+the effect of B is significant at one level of A but not at the other level of A
+the effect B is significant (but different in direction) at each level of A
+
+Repeated measured ANOVA (analogo depedent t-test)
+One-way ANOVA is to the independent t-test as repeated measures ANOVA is to:
+dependent t-test
+
+An experiment with a repeated measures design shows that some subjects perform better in all the conditions than other subjects. This is an example of: systematic variance that is not included in the error term
+
+Which best describes a Latin Square design?
+each condition is represented in each order position
+
+The sphericity assumption assumes:
+homogeneity of variance and homogeneity of covariance
+
+SEMANA 10
+Até o momento, a variável dependente tem sido contínua. Mas e se o outcome for categorical? Chi-square: ambos categorical: predictor and outcome.
+Chi-square goodness of fit:
+Como uma distribuição ajusta a distribuição esperada.
+Null Hypoteses: equal proportion between categories. 
+
+Chi-square = soma( (observado - esperado)^2/esperado)
+df = numero de categorias - 1
+O p-valeu agora depende do chi-square e do df. Assim como o t-test, temos uma familia de distribuição de chi-square.
+effect size: cramer, pode ser interpretado como o coeficiente de correlação/regressão
+
+Just like t-tests and the F-ratio in ANOVA, chi-square values are evaluated relative to a sampling distribution. The correct chi-square distribution to use depends on degrees of freedom. For the chi-square goodness of fit test, what is df?
+The number of categories minus 1: (k - 1)
+
+In R, the chisq.test function requires what type of input?A table of observed frequencies by category
+
+chi-square test of independence
+Relação entre duas variáveis categóricas. (ex. Numa eleição, a relação entre genero e preferenca por candidatos?). Null hypoteses: não há relação.
+df = (linhas -1)(colunas-1)
+Chi-square = soma( (observado - esperado)^2/esperado)
+esperado = (R/N)*C; row, ttotal, column
+
+The chi-square test of independence is appropriate when testing the relationship between what type of two variables?
+Two categorical variables that each have two or more levels
+
+Two categorical variables that each have two or more levels: Homogeneity of variance, Homoscedasticity, Sphericity
+Binary logistic regression
+Quando o outcome é categorical (com duas opçoes somente-binary, quando é mais que dois level, temos multinomial regression ) e os predictors podem ser contínuos e/ou categorial. 
+
+ln(Ŷ /(Ŷ-1)) = B0 + SOMA(BK*XK)
+Ŷ: Predict value do outcome Y
+XK: predictor variables
+BK: Coeficiente de regressão não padronizado
+Y-Ŷ: Residuo ou prediction error
+K : quantidade de predictor
+
+odds ratio: Probabilidade (outcome) / 1 - Probabilidade (outcome); normalmente isolamos o P(outcome)
+log-odds=logit
+
+Binary logistic regression is appropriate when the outcome variable (Y) is categorical and has two levels. What is used when there are more than two levels? Multinomial regression
+If Odds = 1 then the Logit = 0
+
+To evaluate individual predictors in a binary logistic regression, the two statistics to consider are: Odds ratio and wald test
+
+To evaluate the overall model in a binary logistic regression, the two statistics to consider are:
+Classification success and model chi-square
+ 
+SEMANA 11
+Multicolinearity is a concern when conducting which of the following analyses:
+Multiple regression
+
+When conducting a mixed-factorial ANOVA (one independent variable manipulated between subjects and one manipulated within subjects), assumptions are tested using:
+Levene's test AND Mauchly's test
+
+Estatistica parametrica: tenta estimar parametros da população a partir de amostras. 
+A primary difference between parametric and non-parametric statistical procedures is:
+Parametric statistics require assumptions about population parameters; non-parametric statistics don’t
+
+Non-parametric statistics are often used when:
+The assumptions of a parametric test are violated
+
+Exemplo: Para o t-test dependent podemos usar wilcoxan.
+
+The non-parametric test that is most like the parametric dependent t-test is:Wilcoxan
+The non-parametric test that is most like the parametric independent t-test is: Mann Whitney
+
+REVISÃO
+Tipos de pesquisa: descritiva. experimental (manipulamos a variavel indendente) e correlacional (não manipulamos a variavel independente).  
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

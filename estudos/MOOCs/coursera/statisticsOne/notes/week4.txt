@@ -1,0 +1,47 @@
+SEMANA 4
+
+Correlações são usadas para fazer previsões, dada uma variável, prever a outra. A regressão faz a mesma coisa. Temos a variável predictor(x) e a variável outcome(y). Um predictor: regressão simples. Muitos predictors: regressão múltipla. 
+Y = interecept(constante regressão) + X*inclinação + erro_residuo
+
+R (Coeficiente de correlação múltipla): proporção da variância explicada na medida do outcome(Y) explicada pelor predictor.
+
+model = lm(outcome ~ predictor)
+summary(model)
+model = lm(outcome ~ predictor1 + predictor2)
+
+A ideia na regressão é minimizar os resíduos 
+
+Difference between correlation and simple regression:
+Correlation demonstrates the relationship between two variables whereas; simple regression provides an equation which is used to predict scores on an outcome variable.
+
+least square estimation: Minimizar a soma dos quadradros dos resíduos. sum(Y-Ŷ)^2, onde Ŷ = B + B1X, ou seja, Y-Ŷ=erro (observado menos o predict)
+
+Coeficiente B1: r (sdy/sdx). Se estiver normalizado B1 = r (apenas em regressão simples)
+
+What is the formula for SS. SS.Residual = SS.Y - SS.Model
+Residual of variable Y in a simple regression model
+
+pressupostos para regressão: outcome (Y) tem distribuição normal. X ~ Y são linear e há homoscesdacity. Vamos fazer a avaliação dessas 3 condições usando os resíduos. Salvas os resíduos (e) e plotar X versus resíduo (não deve existir relação entre os dois)
+
+Null Hypotesis Significante test: fazemos duas hipoteses H0 e H1 
+directional test: H0 : B =0 e H1 !=0
+
+Assuma que H0 é verdadeira, calcule a probabilidade de observar os dados com essa essas característica dado que H0 é verdadeiro. p=P(D|H0), se p é pequeno rejeita H0, se grande aceite. Confusão comum: Dada que a hipotese nula é verdadeira, a probabilidade de obtermos esse dados é P(D|H0), diferente de "probabilidade da hiposte nula ser verdadeira dado os dados - errado"- p(H0|D). 
+Exemplo, dado p é menor que 0.05 significa que a probabilidade de obtermos esses dados dado a hipótese nula (de não correlação). Rejeitar hipótese nula. 
+t = B1/SE, standart error = raiz(ss.residual/N-2). Maior o t e menor o p (quanto menor o p mais estatisticamente significante é o estudo). t =1 , p grande, não estatisticamente significante.
+
+According to the null hypothesis, the regression coefficient for X when predicting Y will be zero, when the p value obtained from a Null Hypothesis Significance Test indicates the probability of the data, given the null hypothesis is true.
+
+p-value é baseado no t-value. 
+
+Boas práticas: quando reportar p reportar junto: tamanho da amostra, R, Coeficiente.
+
+Which is NOT an alternative to a Null Hypothesis Significance Test? Absolute t-value
+
+A major criticism of NHST is that it is biased by sample size (N). 
+Thus, if NHST results are reported, it is important to also report: effect size
+
+quando o coeficiente (R) é calculado em cima dos dados normalizados, ele é igual a correlação(na regressão simples).
+
+devemos ter uma distribuição normal dos erros centrada em zero (homoscedacity). Não deve haver correlação entre o predictor e o erro.
+

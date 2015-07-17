@@ -1,0 +1,19 @@
+
+
+Exemplo de pesquisa experimental: memory training
+Variável independente: treino da memória: sim (grupo de controle) ou não (placebo)
+dependente: IQ ganho
+
+Randomização: permite fazermos afirmação sobre causalidade (o porque das coisas acontecerem, o que permite: prever, prevenir e fazer coisa boas.). 
+Afirmações fortes requerem variáveis independentes verdadeiras, randomização e amostra representativa, ausência de variáveis que confundem (o que é impossível). A randomização deve ser na seleção do individuos da amostra, assim como na escolha do grupo de controle.
+
+Correlação não implica em causalidade
+Em exemplos didáticos temos grupo pacebo e o grupo de controle, nos estudos de correlação não temos como ter esses grupos, usamos dados do mundo real.  
+
+Na pesquisa experimemtal, há manipulação. Já na pesquisa de correlação (ou estudo dos estados das coisas) não há.
+
+Alguns experimentos parecem pesquisas experimentais, mas são de correlação (normalmente chamados de estudo). 
+
+Há casos que a situação parece experimental, mas é um situação de correlação. Neste casos as variáveis independentes são chamadas de quasi-independente. Exemplo de quasi-independente: sexo (M e F).
+
+

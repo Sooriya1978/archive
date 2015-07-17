@@ -1,0 +1,18 @@
+SEMANA 2
+Tipos de variáveis: nominal, ordinal (rank), interval e ratio. 
+Normalmente, variáveis independentes são nominal e dependentes são interval ou ratio. 
+
+Quando há duas gaussianas no histograma: bimodal
+positive skewed, negative skewed
+
+Interessante: A distribuição da população na latitude (normal em torno do equador) e na longitude (multimodal)
+
+Z scale (X menos media por sd -> (x-m)/sd): valores negativos estao abaixo da media e positivo acima. 
+
+moda (pico da gaussiana), mediana e média
+
+Usar para caracterizar a distribuição: a média para distribuição normal e mediana para skewed.
+Numa distribuição positive skewed a mediana é menor que a média, numa negative skewed a mediana é maior que a média. 
+positive skewed: moda < mediana < média
+negative skewed: média < mediana < moda
+

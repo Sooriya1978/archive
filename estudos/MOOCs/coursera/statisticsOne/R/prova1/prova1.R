@@ -1,0 +1,11 @@
+setwd("/home/thiago/Dropbox/estudos/ead/coursera/statisticsOne/R/prova1")
+library(psych)
+library(ggplot2)
+
+data<-read.table("../week6/labdata6.txt",header=T)
+describe(data$salary)
+model1<-lm(formula=data$salary ~  data$years)
+ajustado<-fitted(model1)
+res<-resid(model1)
+describe(ajustado)
+describe(res)

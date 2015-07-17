@@ -1,0 +1,10 @@
+for datafile in *[AB].txt 
+> do
+> echo $datafile
+> done
+
+for datafile in *[AB].txt;
+do
+echo $datafile
+done
+

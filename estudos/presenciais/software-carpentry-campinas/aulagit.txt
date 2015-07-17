@@ -1,0 +1,17 @@
+git config --global core.editor "vim"
+git log --oneline
+git log --oneline --graph
+git log --oneline --graph --decorate
+git log --oneline --graph --decorate --all
+git commit -a -m 'Meu commit !'
+git checkout HEAD~  # o último commit, para voltar: git checkout master
+git checkout HEAD~ -- README.md # o último commit, para voltar: git checkout master --README.md
+
+git checkout HEAD~4  # voltar 4  commit atras, para voltar: git checkout master
+
+git reset HEAD README.md # Remove o arquivo do stage (isto é, depois de add)
+git checkout HEAD -- README.md (joga foras mudanças)
+
+git diff --word-diff
+
+
