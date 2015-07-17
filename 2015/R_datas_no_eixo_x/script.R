@@ -1,20 +1,20 @@
-setwd('~/remota/repos/archive/2015/R_datas_no_eixo_x/')
+setwd('~/remota/repos/own/usp/archive/2015/R_datas_no_eixo_x/')
 disease <- read.csv('disease.csv')
 disease$data <- as.POSIXct(strptime(disease$data, format = '%Y-%m-%d', tz = 'GMT'))
+
 disease[is.na(disease)] <- 0
 
-plot(disease$data,
-     disease$DCV,
-     type = 'h',
-     col = 'blue',
-     xlab = 'Ano',
-     ylab = 'Morbidade',
-     xaxt = "n",
-     ylim = range(0, 208),
-     main = 'Hospitalizações')
-todas_datas = disease$data
+plot(disease$DCV ~ disease$data,
+     disease, 
+     xaxt = "n", 
+     type = 'l', 
+     col = 'blue', 
+     xlab = 'Ano', 
+     ylab = 'Morbidade', 
+     ylim = range(0, 208), 
+     main = 'Hospitalições em Hospitais de SP')
 
-dates <- seq(as.Date("01/01/2000", format = "%d/%m/%Y"),
-             by = "years", length = 14)
-dates
-axis.Date(side = 1, dates, format = "%Y-%m-%d")
+# delimitar a dimensao do eixo x ("%b-%Y")
+axis(1, disease$data, format(disease$data, "%b-%Y"))
+legend(x='topleft', legend='DCV',  fill='blue')
+
