@@ -1,38 +1,35 @@
-setwd('~/remota/repos/archive/2015/media_diaria/')
+setwd('~/remota/repos/own/usp/archive/2015/meteorologia_media_diaria')
 
-inicio = as.POSIXct("2006-12-31 21:00:00",tz = 'GMT') 
-fim    = as.POSIXct("2007-01-02 23:00:00",tz = 'GMT')  # '31/12/2008 20:00:00'
+# Lê dados do Luis
+galeao = read.csv('data/Galeao_Python.csv')
 
-# Uma tabela que começa em inicio e acaba em fim com intervalor de hora em hora.
-# com as seguintes colunas:	TempAr
+# Converte coluna em datetime
+galeao$DataHora = strptime(galeao$DataHora,format="%m/%d/%Y %H:%M:%S")
+
+# Monta coluna de data com
+inicio = as.POSIXct("2007-05-03 10:00:00") 
+fim    = as.POSIXct("2008-12-08 23:00:00")
 
 # Gera as sequência de datas horária
-date_brazilian = seq(inicio, fim, by="hour")
+DataHora = seq(inicio, fim, by="hour")
 
-# Transformar brazilian_dates em tabela 
-mascara = as.data.frame(date_brazilian)
+# Converte DataHora para data.frame 
+DataHoraCompleta = as.data.frame(DataHora)
+colnames(DataHoraCompleta) = 'DataHoraCompleta'
 
-# Adiciona coluna TempAr
-#mascara = cbind(mascara,TempAr=NA)
+# Verifica as horas faltantes
+x = as.character(galeao$DataHora)
+y = as.character(DataHoraCompleta$DataHoraCompleta)
+horas_faltantes = as.data.frame(setdiff(y,x))
+colnames(horas_faltantes) = 'DataHora'
 
-# Lê modelo do Luis
-test = read.csv('test.csv')
+# Converte galeo$DataHora para caracter
+galeao$DataHora = as.character(galeao$DataHora)
 
-# Converte data do Luis para padrão do R:
-test$date_brazilian = strptime(test$date_brazilian,format="%d/%m/%Y %H:%M:%S",tz="GMT")
-class(test$date_brazilian)
+# Junta tabelas
+galeao_novo = merge(horas_faltantes,galeao,all=T,by="DataHora")
 
-test$date_brazilian[1] ==
-mascara$date_brazilian[1]
-
-# Remove colunas indesejadas
-test = test[,c(1,4)]
-
-library(data.table)
-
-dt1 <- data.table(mascara,  key = "date_brazilian") 
-dt2 <- data.table(test, key = "date_brazilian")
-
-joined.dt1.dt.2 <- dt1[dt2]
-
-x = merge(mascara,test,by='date_brazilian',all=T)
+# Ordanando 
+galeao_novo$DataHora = strptime(galeao_novo$DataHora,format="%Y-%m-%d %H:%M:%S")
+galeao_novo = galeao_novo[order(galeao_novo$DataHora),]
+write.csv(galeao_novo,file="galeao_novo.csv",row.names=F)
