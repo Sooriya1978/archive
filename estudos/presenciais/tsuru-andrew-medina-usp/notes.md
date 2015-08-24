@@ -16,3 +16,4 @@ Removendo servidor:
 Adicionado usuário:
 
     tsuru user-create exemplo@usp.br
+    tsuru login thiago.verissimo@usp.br
