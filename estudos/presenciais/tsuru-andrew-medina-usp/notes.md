@@ -1,7 +1,8 @@
 dicas de git:
 
     git log -p
-    git blame arquivo.txt  
+    git blame arquivo.txt
+    git push origin minha_branch_local:branch_remota
 
 Subir um server local:
 
