@@ -43,3 +43,14 @@ Adicionado/Removendo novas unidades para a aplicação:
     tsuru unit-add 2 -a thiago-01
     tsuru app-info -a thiago-01
     tsuru unit-remove 2 -a thiago-01
+    
+Parando ou ligando as unidades:
+
+    tsuru app-stop -a thiago-01
+    tsuru app-start -a thiago-01
+    tsuru app-restart -a thiago-01
+
+Assistindo log:
+    
+    tsuru app-log -a thiago-01
+    
