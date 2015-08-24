@@ -24,14 +24,15 @@ Adicionado/removendo usuário e time:
     tsuru login thiago.verissimo@usp.br
     tsuru team-create fflch
     tsuru team-remove fflch
+
+Adicionado chave:
+
+    tsuru key-add laptop_sti /home/thiago/.ssh/id_rsa.pub
+    tsuru key-list
     
 Trabalhando com apps:
 
     tsuru app-create thiago-01 php
     tsuru app-list
     tsuru app-info -a thiago-01
-    
-Adicionado chave:
-
-    tsuru key-add laptop_sti /home/thiago/.ssh/id_rsa.pub
-    tsuru key-list
+    git clone git@repo.apps.usp.br:thiago-01.git
