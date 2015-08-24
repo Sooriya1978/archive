@@ -54,3 +54,7 @@ Assistindo log:
     
     tsuru app-log -a thiago-01
     
+Acessando o shell:
+
+    tsuru app-run "ls -lsa" -a thiago-01
+    tsuru app-shell -a thiago-01
