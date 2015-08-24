@@ -24,6 +24,7 @@ Trabalhando com apps:
 
     tsuru app-create thiago-01 php
     tsuru app-list
+    tsuru app-info -a thiago-01
     
 Adicionado chave:
 
