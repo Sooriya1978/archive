@@ -13,8 +13,14 @@ Removendo servidor:
     tsuru target-remove usp
     tsuru target-list
     
-Adicionado usuário e time:
+Adicionado/removendo usuário e time:
 
     tsuru user-create exemplo@usp.br
     tsuru login thiago.verissimo@usp.br
     tsuru team-create fflch
+    tsuru team-remove fflch
+    
+Trabalhando com apps:
+
+    tsuru app-create thiago-01 php
+    tsuru app-list
