@@ -3,6 +3,11 @@ dicas de git:
     git log -p
     git blame arquivo.txt  
 
+Subir um server local:
+
+    https://github.com/tsuru/tsuru-bootstrap
+    https://github.com/tsuru/now
+
 Adicionando o servidor de tsuru:
 
     tsuru target-list
