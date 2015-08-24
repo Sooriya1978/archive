@@ -37,3 +37,8 @@ Trabalhando com apps:
     tsuru app-list
     tsuru app-info -a thiago-01
     git clone git@repo.apps.usp.br:thiago-01.git
+
+Adicionado novas unidades para a aplicação:
+
+    tsuru unit-add 2 -a thiago-01
+    tsuru app-info -a thiago-01
