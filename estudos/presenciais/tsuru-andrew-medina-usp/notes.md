@@ -59,3 +59,4 @@ Acessando o shell:
 
     tsuru app-run "ls -lsa" -a thiago-01
     tsuru app-shell -a thiago-01
+    tsuru app-shell c83894949 -a thiago-01 # entrar em uma unidade específica
