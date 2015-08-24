@@ -28,3 +28,4 @@ Trabalhando com apps:
 Adicionado chave:
 
     tsuru key-add laptop_sti /home/thiago/.ssh/id_rsa.pub
+    tsuru key-list
