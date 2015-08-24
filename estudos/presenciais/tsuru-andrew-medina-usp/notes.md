@@ -34,7 +34,7 @@ Adicionado chave:
 Trabalhando com apps:
 
     tsuru app-create thiago-01 php # se o usuário só tiver um time
-    tsuru app-create --team='fflch' thiago-01 php # Escolhe o time
+    tsuru app-create thiago-01 php --team=fflch # Escolhe o time
     tsuru app-list
     tsuru app-info -a thiago-01
     git clone git@repo.apps.usp.br:thiago-01.git
