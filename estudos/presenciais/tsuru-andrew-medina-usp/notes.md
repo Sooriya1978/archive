@@ -24,3 +24,7 @@ Trabalhando com apps:
 
     tsuru app-create thiago-01 php
     tsuru app-list
+    
+Adicionado chave:
+
+    tsuru key-add laptop_sti /home/thiago/.ssh/id_rsa.pub
