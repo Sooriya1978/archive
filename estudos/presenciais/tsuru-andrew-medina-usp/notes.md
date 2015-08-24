@@ -53,6 +53,7 @@ Parando ou ligando as unidades:
 Assistindo log:
     
     tsuru app-log -a thiago-01
+    tsuru app-log -f -a thiago-01
     
 Acessando o shell:
 
