@@ -3,6 +3,10 @@ dicas de git:
     git log -p
     git blame arquivo.txt
     git push origin minha_branch_local:branch_remota
+    git remote rm origin
+    git remote add thiago-01 git@repo.apps.usp.br:thiago-01.git
+    git remote show
+    git push git@repo.apps.usp.br:thiago-01.git master:master
 
 Subir um server local:
 
