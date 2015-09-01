@@ -123,3 +123,14 @@ Minha modificação e sites.sh:
         fi
     done < sites.txt
 
+Uso do rsync:
+
+    rsync -razv thiago@cloud.fflch.usp.br:teste teste
+
+Verifica se arquivo existe:
+
+    if [ ! -e arquivo.txt ]; then 
+      echo "arquivo.txt não existe"
+    exit 1
+fi
+
