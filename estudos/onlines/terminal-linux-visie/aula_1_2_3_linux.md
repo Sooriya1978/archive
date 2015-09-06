@@ -134,3 +134,7 @@ Verifica se arquivo existe:
     exit 1
 fi
 
+propriedade Sticky: em pastas, impede que outros usuários deletem ou renomeam arquivos dos quais não são donos:
+
+    chmod o+t /home/thiago/tmp/
+    
