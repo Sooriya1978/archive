@@ -1,4 +1,4 @@
-setwd("~/Desktop/mygits/gttsintusp/")
+setwd("~/Desktop/repos/archive/2014/gttsintusp/")
 
 salarios = read.csv("input/salarios-setembro2014-folha.csv",sep=";",dec=",",header=T)
 

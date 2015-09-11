@@ -1,6 +1,6 @@
-setwd("~/Desktop/mygits/gttsintusp/")
+setwd("~/Desktop/repos/archive/2015/salarios_fflch/")
 
-salarios = read.csv("input/salarios-setembro2014-folha.csv",sep=";",dec=",",header=T)
+salarios = read.csv("input/",sep=";",dec=",",header=T)
 
 docentes =  subset(salarios,salarios$Categoria=='Docente')
 write.table(docentes,file="output/docentes.csv",sep=";",dec=",",row.names=F)

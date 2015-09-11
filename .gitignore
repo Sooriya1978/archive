@@ -16,3 +16,7 @@ vignettes/*.pdf
 # Linux tmp files
 *~
 *.swp
+*.xls
+*.xlsx
+
+*.ipynb*
