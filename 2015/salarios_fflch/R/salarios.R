@@ -1,5 +1,5 @@
-#setwd('~/remota/repos/git.uspdigital.usp.br/archive/2015/salarios_fflch/')
-setwd("~/Desktop/repos/archive/2015/salarios_fflch/")
+setwd('~/remota/repos/git.uspdigital.usp.br/archive/2015/salarios_fflch/')
+#setwd("~/Desktop/repos/archive/2015/salarios_fflch/")
 
 options(encoding = 'utf-8')
 data = read.csv('input/tratados/2015/maio.csv',header=T,dec=',')
