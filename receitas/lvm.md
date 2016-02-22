@@ -25,7 +25,9 @@ No /etc/fstab:
 Para aumentar o LV adcionando outros discos físicos:
   pvcreate /dev/sda1
   vgextend vg_meugrupo /dev/sda1
-  lvextend -n /dev/mapper/vg_meugrupo-lv_meulv -l 100%FREE /dev/sda1
+  lvextend -n /dev/mapper/vg_meugrupo-lv_meulv -l 100%FREE
+  ou lvextend -L+222M /dev/mapper/vg_meugrupo-lv_meulv
+  ou lvextend -L+222G /dev/mapper/vg_meugrupo-lv_meulv
   resize2fs /dev/mapper/vg_meugrupo-lv_meulv
 
 

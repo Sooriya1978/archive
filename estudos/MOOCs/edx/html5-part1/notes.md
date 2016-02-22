@@ -1,3 +1,9 @@
+# Usando legenda srt com html5:
+http://www.storiesinflight.com/js_videosub/#code
+
+# Criando legenda no padrão vtt (padrão do html5):
+http://thenewcode.com/584/Creating-And-Validating-WebVTT-Subtitles
+
 # Microdata como alternativa ao RDF:
 http://journal.code4lib.org/articles/6400
 
@@ -34,3 +40,21 @@ http://html5please.com/
 
 # Datas em html5
 http://www.brucelawson.co.uk/2012/best-of-time/
+
+# artigo sobre video em tela cheia com html5:
+http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video
+
+# funções javascript para player de vídeo:
+https://github.com/codepo8/rotatezoomHTML5video/blob/master/transformvideo.js
+
+# adicionar os prefixos automaticamente no css para navegadores antigos:
+https://github.com/postcss/autoprefixer
+
+# Sobre o formato de legendas WebVTT:
+https://developer.mozilla.org/fr/docs/Web/API/Web_Video_Text_Tracks_Format
+
+# Site para criação de legenda no formato WebVTT:
+http://www.amara.org/
+
+
+

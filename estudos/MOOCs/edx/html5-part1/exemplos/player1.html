@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by micbuffa (http://jsbin.com/dacevo/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="My Video Player">
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+.container {
+  margin: 0px auto;
+  padding: 20px;
+  width: 480px;
+  background-image:url(http://static2.grsites.com/archive/textures/lgren/lgren020.jpg);
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border-radius: 20%;
+  box-shadow: 5px 5px 3px grey;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover { 
+background-color: red;
+}
+
+.controlpanel {
+  margin: 10px;
+  border: 2px solid;
+  padding: 20px;
+}
+
+.title {
+    float: left;
+    padding: 0 2px;
+    margin: -30px 0 0 0px;
+   background-image:url(http://static2.grsites.com/archive/textures/lgren/lgren020.jpg);
+}
+</style>
+</head>
+<body>
+  <section class="container">
+   <video id="myvideo" width="480" height="270">
+  <source src="https://dl.dropboxusercontent.com/u/59052088/Rain.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<div class="controlpanel"> 
+  <div class="title">Control Panel</div>
+  <button onclick="playVideo();"><b>Play</b></button>
+
+<button onclick="pauseVideo();">Pause</button>
+<button onclick="stopVideo();">Stop</button>
+<button onclick="rewindVideo();">
+  Back to beginning</button>
+  </section>
+    </div>
+<script>
+    myvideo = document.querySelector("#myvideo");
+  
+function playVideo() {
+  myvideo.play();
+}
+function pauseVideo() {
+  myvideo.pause();
+}
+function stopVideo() {
+  myvideo.load();
+}  
+function rewindVideo() {
+  myvideo.currentTime = 0;
+}
+</script>
+
+</body>
+</html>

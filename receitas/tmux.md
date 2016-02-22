@@ -41,3 +41,12 @@ tmux split-window (prefix + “)`
     selects the next pane in the specified direction
 `tmux select-pane -t :.+`
     selects the next pane in numerical order 
+
+%  vertical split
+"  horizontal split
+
+o  swap panes
+q  show pane numbers
+x  kill pane
+
+

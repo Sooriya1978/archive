@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by Fhernd (http://jsbin.com/sorufo/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>W2S2.2U9_Proj2: Custom Player</title>
+<style id="jsbin-css">
+.myButton {
+	-moz-box-shadow: 0px 10px 14px -7px #3e7327;
+	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77b55a), color-stop(1, #72b352));
+	background:-moz-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-webkit-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-o-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-ms-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+	background-color:#77b55a;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
+	background:-moz-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-webkit-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-o-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-ms-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+	background-color:#72b352;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+</head>
+<body onload="init();">
+
+    <video controls id="vid" height="480" width="640">
+
+        <source src="https://dl.dropbox.com/s/8ad4jafpin0popi/Queen%20-%20Bohemian%20Rhapsody%20%28Live%20Aid%207-13-1985%29.mp4" type="video/mp4" />
+    </video>
+
+    <p>Basic Video Player</p>
+
+    <button onclick="previousVideo();" class="myButton">Previous</button>
+    <button onclick="playVideo();" class="myButton">Play</button>
+    <button onclick="pauseVideo();" class="myButton">Pause</button>
+    <button onclick="nextVideo();" class="myButton">Next</button>
+
+    <p>Current playing: <b id="currentPlaying">Queen - Bohemian Rhapsody (Live Aid 1985)</b></p>
+<script id="jsbin-javascript">
+var vid;
+var vidName;
+
+var sources = ["https://dl.dropbox.com/s/8ad4jafpin0popi/Queen%20-%20Bohemian%20Rhapsody%20%28Live%20Aid%207-13-1985%29.mp4",
+    "https://dl.dropbox.com/s/hzv51izsnuzxc75/Queen%20-%20Radio%20GaGa%20-%20Live%20Aid%20-%20Wembley%20London%201985.mp4",
+    "https://dl.dropbox.com/s/31mlm02e0b5j3as/Queen%20-%20We%20Are%20the%20Champions%20%28Live%20Aid%2C%20Wembley%20Stadium%2C%201985%29.mp4"];
+
+var videoNames = ["Queen - Bohemian Rhapsody (Live Aid 1985)", "Queen - Radio Ga Ga (Live Aid 1985)", "Queen - We Are The Champions (Live Aid 1985)"];
+
+numVideo = 0;
+
+function init() {
+    vid = document.querySelector("#vid");
+    vidName = document.getElementById("currentPlaying");
+}
+
+function playVideo() {
+    vid.play();
+}
+
+function pauseVideo() {
+    vid.pause();
+}
+
+function rewindVideo() {
+    vid.currentTime = 0;
+}
+
+function previousVideo() {
+    numVideo--;
+    if (numVideo < 0)
+    {
+        numVideo = 2;
+    }
+    vidName.innerText = videoNames[numVideo];
+    vid.src = sources[numVideo];
+    vid.play();
+}
+
+function nextVideo() {
+    numVideo++;
+    if (numVideo > 2)
+    {
+        numVideo = 0;
+    }
+
+    vidName.innerText = videoNames[numVideo];
+    vid.src = sources[numVideo];
+    vid.play();
+}
+</script>
+</body>
+</html>
