@@ -17,39 +17,52 @@ basico = read.csv('data/basico.csv')
 x = seq(1:nrow(basico))
 acumulado_piso = trapz(x,basico$piso)
 acumulado_corrigido = trapz(x,basico$corrigido)
+
 writeLines("Salário PISO acumulado no período: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(acumulado_piso,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
 
 writeLines("Salário CORRIGIDO acumulado no período: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(acumulado_corrigido,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
+
 perda = acumulado_corrigido - acumulado_piso
 writeLines("Perda acumulada: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(perda,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
 
-writeLines("\n ## Técnico",con=f,sep="\n")
+writeLines("\n\n ## Técnico",con=f,sep="\n")
 tecnico = read.csv('data/tecnico.csv')
 x = seq(1:nrow(tecnico))
 acumulado_piso = trapz(x,tecnico$piso)
 acumulado_corrigido = trapz(x,tecnico$corrigido)
 writeLines("Salário PISO acumulado no período: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(acumulado_piso,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
 
 writeLines("Salário CORRIGIDO acumulado no período: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(acumulado_corrigido,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
+
 perda = acumulado_corrigido - acumulado_piso
 writeLines("Perda acumulada: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(perda,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
 
-writeLines("\n  ## Superior ",con,sep="\n")
+writeLines("\n\n  ## Superior ",con,sep="\n")
 superior = read.csv('data/superior.csv')
 x = seq(1:nrow(superior))
 acumulado_piso = trapz(x,superior$piso)
 acumulado_corrigido = trapz(x,superior$corrigido)
+
 writeLines("Salário PISO acumulado no período: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(acumulado_piso,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
 
 writeLines("Salário CORRIGIDO acumulado no período: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(acumulado_corrigido,2)),con=f,sep="\n")
+writeLines("\n",con=f,sep="")
+
 perda = acumulado_corrigido - acumulado_piso
 writeLines("Perda acumulada: R$ ",con=f,sep="")
 writeLines(gsub('\\.',',',round(perda,2)),con=f,sep="\n")
