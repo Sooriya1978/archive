@@ -13,15 +13,18 @@ x = seq(1:nrow(basico))
 acumulado_piso = trapz(x,basico$piso)
 acumulado_corrigido = trapz(x,basico$corrigido)
 acumulado_corrigido - acumulado_piso
+# R$ 4769,62
 
 tecnico = read.csv('data/tecnico.csv')
 x = seq(1:nrow(tecnico))
 acumulado_piso = trapz(x,tecnico$piso)
 acumulado_corrigido = trapz(x,tecnico$corrigido)
 acumulado_corrigido - acumulado_piso
+# R$ 8664,52
 
 superior = read.csv('data/superior.csv')
 x = seq(1:nrow(superior))
 acumulado_piso = trapz(x,superior$piso)
 acumulado_corrigido = trapz(x,superior$corrigido)
 acumulado_corrigido - acumulado_piso
+# R$ 16292,67
