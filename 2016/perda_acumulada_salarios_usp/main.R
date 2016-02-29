@@ -10,9 +10,9 @@ require(pracma)
 
 # Escrevendo resultados:
 f <- file("output.md","w")
-writeLines("# Estimativa da perda acumulada dos salários USP entre Maio-2011 e Jan-2016 \n",con,sep="\n")
+writeLines("# Estimativa da perda acumulada dos salários USP entre Maio-2011 e Jan-2016 \n",con,sep="\n\n")
 
-writeLines("\n ## Básico ",con=f,sep="\n")
+writeLines("## Básico ",con=f,sep="\n")
 basico = read.csv('data/basico.csv')
 x = seq(1:nrow(basico))
 acumulado_piso = trapz(x,basico$piso)
@@ -28,10 +28,10 @@ writeLines("\n",con=f,sep="")
 
 perda = acumulado_corrigido - acumulado_piso
 writeLines("Perda acumulada: R$ ",con=f,sep="")
-writeLines(gsub('\\.',',',round(perda,2)),con=f,sep="\n")
+writeLines(gsub('\\.',',',round(perda,2)),con=f,sep="\n\n\n")
 writeLines("\n",con=f,sep="")
 
-writeLines("\n\n ## Técnico",con=f,sep="\n")
+writeLines("## Técnico",con=f,sep="\n")
 tecnico = read.csv('data/tecnico.csv')
 x = seq(1:nrow(tecnico))
 acumulado_piso = trapz(x,tecnico$piso)
@@ -46,10 +46,10 @@ writeLines("\n",con=f,sep="")
 
 perda = acumulado_corrigido - acumulado_piso
 writeLines("Perda acumulada: R$ ",con=f,sep="")
-writeLines(gsub('\\.',',',round(perda,2)),con=f,sep="\n")
+writeLines(gsub('\\.',',',round(perda,2)),con=f,sep="\n\n\n")
 writeLines("\n",con=f,sep="")
 
-writeLines("\n\n  ## Superior ",con,sep="\n")
+writeLines("## Superior ",con,sep="\n")
 superior = read.csv('data/superior.csv')
 x = seq(1:nrow(superior))
 acumulado_piso = trapz(x,superior$piso)
